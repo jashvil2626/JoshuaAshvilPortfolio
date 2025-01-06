@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/png" href="logo1.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css">
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.js"></script>
+</head>
+
+<style>
+  /* Body Styling */
+body {
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Card Styling */
+.ui.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure even spacing */
+    height: 325px; /* Fixed height for all cards */
+    width: 250px; /* Fixed width for all cards */
+    margin: 10px auto; /* Center the cards */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Image Styling */
+.ui.card .image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Content Styling */
+.ui.card .content {
+    flex: 1; /* Allow content to expand and fill available space */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+}
+
+/* Header Styling */
+.ui.card .header {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Add spacing for better alignment */
+}
+
+/* Button at Bottom */
+.ui.bottom.attached.button {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    margin-top: auto; /* Push button to the bottom */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .ui.card {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Let height adjust dynamically */
+    }
+}
+/* Responsive Video Container */
+.video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+</style>
+
+
+<body>
+    <div data-role="page" data-title="Menu" id="main_page" data-dialog="false" style = "background: white;">
+        <br>
+        <center><h1 class="ui header">Joshua Ashvil's Work Portfolio</h1></center>
+        
+        <div class="ui secondary horizontally pointing menu" id="menu">
+            <a class="item" href="#projects">
+                <i aria-hidden="true" class="cogs icon"></i>
+                    Projects
+            </a>
+            <a class="item" href="#contact">
+                <i aria-hidden="true" class="address book icon"></i>
+                Contact
+            </a>
+            <a class="item" href="#resume" onclick="openInNewTab('https://drive.google.com/file/d/15iy3yDe6L_i5zyQcNkPOQqbOaYtVKbD5/view?usp=sharing')">
+               <i aria-hidden="true" class="file alternate icon"></i>
+               Resume
+            </a>
+        </div>
+
+        <h2 class="ui header" id="projects" style="margin: 20px;">Projects</h2>
+
+        <div class="ui stackable grid">
+
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="wordle.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">Handheld Wordle (Jordle)</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-wordle">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="Ping_Pong_Ball_Robot.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">Autonomous Mobile Robot</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-amr">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="sumo2.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">Sumo Robot</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-sumo">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="Nepipen.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">The Nepipen</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-nepi">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="brace2.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">The BraceYourself</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-brace">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="pickup3.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">Improving Pickup Truck Aerodynamics</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-pickup">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>
+            
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="tarm3.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">Telescopic Arm Climbing Device</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-tarm">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>           
+
+        </div>
+        
+        <div class="ui modal" id="modal-wordle">
+            <i class="close icon"></i>
+            <div class="header">Handheld Wordle (Jordle)</div>
+            <div class="scrolling content">
+                <div class="segment">
+                    <h1>The Problem: </h1>
+                    <p>Wordle is a popular game developed by the New York Times that challenges players to guess a 5-letter word in 6 tries or less. As the user guesses words, clues are left on whether letters are placed correctly (the game rules are attached in the image below). Unfortunately, only one word is released daily, so if a user wants to play again, they have to wait until the next day. To solve this, I created a handheld Wordle Game, Jordle, allowing users to play as many times as they want.</p>
+                    <h3>Skills Used: C++ · Arduino IDE · Laser Cutting · Computer-Aided Design (CAD) · 3D Printing · Electronics · Design</h3>
+                    <h2>Wordle Rules: </h2>
+                    <img class="ui centered large image" src="Words-Rules.jpeg">
+                    <h1>How It Works: </h1>
+                    <p>An Arduino Nano was used to power this device, and it is connected to a single joystick, pushbutton, 0.98-inch OLED Display, and power switch. The circuitry was first modeled in simulation software, where the game code I created was initially tested. The game code follows the same logic as the original (selecting a random 5-letter word each time it is turned on), but with the color limitations of the OLED display a green letter indicator was changed to a filled rectangle around the letter, and a yellow letter indicator was changed to a hollow rectangle. The user creates words using the joystick to scroll through the alphabet and uses the red push button to enter the word. In addition, when the user holds down the joystick, they get to see what letters they haven’t tried yet. Lastly, this game also features a 2-player mode, where users can compete against one another to see who guesses the word faster. Once the code was completed in simulation, a CAD model for the housing was created and manufactured using 3D printing and laser cutting, the circuit was wired and mounted, and the code was uploaded to the Arduino.</p>
+                    <h2>Circuit Diagram: </h2>
+                    <img class="ui centered large image" src="wordle2.jpeg">
+                    <h2>CAD Model: </h2>
+                    <img class="ui centered large image" src="wordle3.jpeg">
+                    <h1>Challenges: </h1>
+                    <p>The biggest challenge of this project was dealing with the limited memory of the Arduino Nano. Since the dictionary of 5-word English letters contains well over 3500 strings, the Arduino quickly ran out of memory when it was loaded in as an array. At first, I tried using an Arduino micro SD card module to store the array, but that too used up too much memory. Thus, I encoded the dictionary to eliminate the use of the large 8-bit ASCII characters (with the help of sources that have achieved this before) and reduced the size of the array by over 50 percent. The second challenge of this project was mounting the electronic components to my housing. The OLED display was originally supposed to be mounted using four M2 bolts, but this broke the screen due to its fragility. Thus, I used a strong adhesive instead which fixed this issue. Additionally, the joystick top was too large and kept getting caught on the housing, so I 3D printed my own joystick top modeled after a Nintendo Switch JoyCon joystick, and this worked much better.</p>
+                    <h1>Result: </h1>
+                    <p>The resulting game was well-received by those who played it, and users responded well to the portability and simplicity of the device. Today, I am using this game as a way to pass the time on my commute to school! A video of me playing the game can be found below:</p>
+                    <h2>Game Walkthrough: </h2>
+                    <div class="video-container">
+                        <video controls>
+                            <source src="wordle.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui modal" id="modal-amr">
+            <i class="close icon"></i>
+            <div class="header">Autonomous Mobile Robot</div>
+            <div class="scrolling content">
+                <div class="segment">
+                    <h1>The Problem: </h1>
+                    <p>My team was tasked with creating an autonomous robot for the 2024 Cooper Union Robot Tank Battle competition. The competition's primary goal is to accumulate points by launching 40 mm ping-pong balls at the opponent’s home base or robot. The home bases and robots are equipped with infrared (IR) light markers for detection. Additionally, robots must navigate an arena with randomly placed obstacles, and be able to return to its starting position (home base).</p>
+                    <h3>Skills Used: C++ · Arduino IDE · Laser Cutting · Computer-Aided Design (CAD) · 3D Printing · Electronics · Design · Manufacturing</h3>    
+                    <h1>How It Works: </h1>
+                    <p>Attached below is the CAD model of the robot, which has many subassemblies that help it come together. The first is the motor subassembly, which features two 12V 41-rpm motors attached to a 4-inch wheel using a custom adapter machined out of aluminum. The front wheel is a 1.5-inch diameter ball castor. These motors are attached to a chassis, which has a puzzle-piece-like structure of ⅛’’ acrylic plates and a 3D-printed front. To shoot the ping pong ball, a 12V linear solenoid is mounted on the top of the robot to perform this task with ease. For the electronics, an Arduino Mega is used as the microcontroller, alongside an L298N motor driver and an array of 5 Ultrasonic and 5 IR sensors. The robot is powered by a 12V battery with a kill switch. The array of 5 ultrasonic and IR sensors allowed us to successfully implement a state-machine program that successfully avoided all obstacles and had a wide range of IR light detection. When the middle 3 IR lights detect the light, the robot shoots and turns around. When the side IR sensors detected the light, the robot would turn and move back to align its shooter with the IR light before shooting.</p>
+                    <h2>Robot CAD Model:</h2>
+                    <img class="ui centered large image" src="amr1.jpeg">
+                    <h2>Chassis Subassembly: </h2>
+                    <img class="ui centered large image" src="chassis.jpeg">
+                    <h2>Sensor Subassembly: </h2>
+                    <img class="ui centered large image" src="sensors.jpeg">
+                    <h2>Solenoid Subassembly:</h2>
+                    <img class="ui centered large image" src="solenoid.jpeg">
+                    <h2>Circuit Diagram: </h2>
+                    <img class="ui centered large image" src="amr2.jpeg">
+                    <h1>Challenges: </h1>
+                    <p>In the building process, we encountered an issue with our Arduino resetting over and over. This happened because when transitioning from moving forward to backward, the current change was so much in the motors that the Arduino reset. In addition, the motor wires were tangled into the motor driver signal wires, disrupting the Arduino. We fixed these issues, replaced our Arduino as well as many of the other components, and rewired the whole robot, ensuring it would work properly. We also had issues with our voltage regulator getting extremely hot, well over proper operating temperatures. To fix this issue, we bought heatsinks and put one on the voltage regulator.</p>
+                    <h1>Result: </h1>
+                    <p>In the competition, the robot was very successful. This robot was the only robot to complete all four class achievements: shooting another robot, traversing halfway through the arena and returning to home base without any collisions, shooting the enemy home base, and completing an entire round without any collisions. This highlighted the success of obstacle avoidance, IR detection, and ping-pong ball shooter. The robot won 3 rounds and tied 2 rounds, becoming the 2024 competition winner.</p>
+                    <h2>Completed Robot: </h2>
+                    <img class="ui centered large image" src="Ping_Pong_Ball_Robot.jpeg">
+                    <h2>Robot Test Run: </h2>
+                    <div class="video-container">
+                        <video controls>
+                            <source src="amr.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ui modal" id="modal-sumo">
+            <i class="close icon"></i>
+            <div class="header">Sumo Robot</div>
+            <div class="scrolling content">
+                <div class="segment">
+                    <h1>The Problem: </h1>
+                    <p>My team was tasked with creating an autonomous sumo robot that could push another robot out of a 3x3 ft enclosed area. The field is made out of a 3x3 ft sheet of black neoprene rubber, with all the edges being white. The edges are a different color so robots could use provided IR sensors to sense them and move back into the field. The robot budget was 200 dollars, and teams were expected to use an ATMega328P microcontroller, SNAP programmer, IR sensors, and L298N motor driver.</p>
+                    <h3>Skills Used: C++ · Laser Cutting · Computer-Aided Design (CAD) · 3D Printing · Electronics · Design · Manufacturing · Microchip Studio</h3>
+                    <h1>How It Works: </h1>
+                    <p>Attached below is the CAD model of the robot, which has many subassemblies that help it come together. The first is the motor subassembly, which features two 12V 41-rpm motors attached to a 4-inch wheel using a custom adapter machined out of aluminum. These motors are attached to a chassis, which has a puzzle-piece-like structure of ⅛’’ acrylic plates and a 3D-printed top lid. The front of the lid has a piece of 1/16’’ aluminum mounted to it as a wedge to get up under other robots. For the electronics, the robot is powered by a 12V battery with a kill switch and uses an L298N motor driver to move the motors, and an ATMega328P as a microcontroller. The microcontroller used a SNAP programmer to have a program written to it, that simply used the two IR sensors to detect if the edge was found, and if so, maneuver back into the field.</p>
+                    <h2>Robot CAD Model: </h2>
+                    <img class="ui centered large image" src="sumo4.jpeg">
+                    <h2>Motor Subassembly: </h2>
+                    <img class="ui centered large image" src="wheel.jpeg">
+                    <h2>Chassis Subassembly: </h2>
+                    <img class="ui centered large image" src="chassis2.jpeg">
+                    <h2>Circuit Diagram: </h2>
+                    <img class="ui centered large image" src="sumo6.jpeg">
+                    <h1>Challenges: </h1>
+                    <p>The main challenges of this project arise from the electronics. We were given an ATMega328P microcontroller with a SNAP Programmer, which was very unintuitive to use compared to an Arduino, so there was a lot of troubleshooting involved in getting the robot’s code to upload properly. In addition, the IR sensors we were using were very poor and required constant recalibration when room environments changed. In the future, we would implement a better wire management system to prevent potentially dangerous voltage errors (which destroyed one of our SNAP programmers), as well as use less sensitive IR sensors.</p>
+                    <h1>Results: </h1>
+                    <p>In the competition, the robot was very successful. It was able to win two of the three rounds it participated in and demonstrated the ability to stay inside the field unless pushed out. What caused it to lose one round was the wedge not performing as well as intended and the motors not being powerful enough to push the other robot out of the ring. These are fixes my team would make to improve the robot in the future.</p>
+                    <h2>Completed Robot: </h2>
+                    <img class="ui centered large image" src="sumo3.jpeg">
+                    <h2>Robot Battles: </h2>
+                    <div class="ui two column grid">
+                        <div class="column">
+                            <div class="video-container">
+                                <video controls>
+                                    <source src="video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="video-container">
+                                <video controls>
+                                    <source src="video 2.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui modal" id="modal-nepi">
+            <i class="close icon"></i>
+            <div class="header">The Nepipen</div>
+            <div class="scrolling content">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <img class="ui medium image" src="Nepipen.jpeg">
+                    </div>
+                    <div class="column">
+                        <img class="ui medium image" src="nepi3.jpeg">
+                    </div>
+                    <div class="column">
+                        <img class="ui medium image" src="nepi2.jpeg">
+                    </div>
+                    <div class="column">
+                        <div class="ui embed" data-source="youtube" data-id="SDAmOZ2tCrg">
+                        </div>
+                    </div>
+                </div>
+                <div class="segment">
+                    <p>The Nepipen is a double-dose epinephrine autoinjector, using a one-vial ejection system, for those
+                        who need more than one dose of epinephrine in anaphylactic shock. Our initial goal of ensuring
+                        compactness (1.5 inches wide and 5.5 inches long), safety, and intuitiveness was accomplished.</p>         
+                </div>
+            </div>
+        </div>
+
+        <div class="ui modal" id="modal-brace">
+            <i class="close icon"></i>
+            <div class="header">The BraceYourself</div>
+            <div class="scrolling content">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <img class="ui medium image" src="brace2.jpeg">
+                    </div>
+                    <div class="column">
+                        <img class="ui medium image" src="brace3.jpeg">
+                    </div>
+                </div>
+                <div class="segment">
+                    <p>The BraceYourself is a portable, collapsible limb splint for those who hike, ski, or do other highrisk sports. The device is completely adjustable in length, can be put on with one arm, and fits into
+                        a user's backpack with ease. Most importantly, it is sturdy enough to support a broken limb, which
+                        prevents injury from worsening. These key objectives were achieved by surveying medical experts
+                        and our potential customers to meet their needs.</p>         
+                </div>
+            </div>
+        </div>
+
+        <div class="ui modal" id="modal-pickup">
+            <i class="close icon"></i>
+            <div class="header">Improving Pickup Truck Aerodynamics</div>
+            <div class="scrolling content">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <img class="ui medium image" src="p2.jpeg">
+                    </div>
+                    <div class="column">
+                        <img class="ui medium image" src="pickup3.jpeg">
+                    </div>
+                    <div class="column">
+                        <img class="ui medium image" src="p3.jpeg">
+                    </div>
+                    <div class="column">
+                        <img class="ui medium image" src="p1.jpeg">
+                    </div>
+                </div>
+                <div class="segment">
+                    <p>Currently, most pickup trucks have a
+                        very poor aerodynamic design,
+                        reducing their efficiency. To fix this
+                        issue, a removable bed cover was
+                        created, which is inspired by the
+                        aerodynamic shape of the Boxfish.
+                        After simulation and real-world
+                        testing, the improvements led to an
+                        increase of 1.5 miles per gallon
+                        (surpassing the initial goal of 0.4
+                        mpg), which can save consumers an
+                        average of $2,000 over the lifespan
+                        of the truck. The simulations were
+                        
+                        done using STAR-CCM+ and the real-
+                        world testing was done using a wind
+                        
+                        tunnel. A mounting procedure was
+                        created that allowed for the measure
+                        of drag force on a prototype using a
+                        scale and L bar, as the lab did not
+                        have sensors available to measure
+                        the force.</p>         
+                </div>
+            </div>
+        </div>
+
+        <div class="ui modal" id="modal-tarm">
+            <i class="close icon"></i>
+            <div class="header">Telescopic Arm Climbing Device</div>
+            <div class="scrolling content">
+                <div class="ui two column grid">
+                    <div class="column">
+                        <img class="ui medium image" src="tarm3.jpeg">
+                    </div>
+                    <div class="column">
+                        <img class="ui medium image" src="tarm4.jpeg">
+                    </div>
+                </div>
+                <div class="segment">
+                    <p>This mechanism aimed to help a robot (120 pounds in weight) climb and stay up on a pole, roughly
+                        5 feet in the air. The device utilizes a Falcon 500 motor to help unspool spring steel to raise and
+                        lower the arm. In addition, a ratchet mechanism is employed to prevent fallback as the robot is
+                        raised up.</p>         
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            $(document).ready(function () {
+                $('.ui.embed').embed(); // Initialize Semantic UI embed component
+            });
+        </script>
+
+        <script>
+            $(document).ready(function () {
+                // Attach click event to all "Learn More" buttons
+                $('.learn-more').on('click', function () {
+                    const modalId = $(this).data('modal'); // Get the modal ID from the button's data-modal attribute
+                    $('#' + modalId).modal('show'); // Show the corresponding modal
+                });
+            });
+        </script>
+
+        <h2 class="ui header" id="contact" style="margin: 20px;">Contact</h2>
+
+        <button class="ui linkedin button" onclick="openInNewTab('https://www.linkedin.com/in/joshua-ashvil-59aa8625b/')" style="margin: 10px;">
+            <i class="linkedin icon"></i>
+            LinkedIn
+        </button>
+
+        <button class="ui google plus button" onclick="openEmailClient()" style="margin: 10px;">
+            <i class="google icon"></i>
+            Gmail
+        </button>
+
+        <script>
+            function openInNewTab(url) {
+                window.open(url, '_blank'); // Open the URL in a new tab
+            }
+        </script>
+
+<script>
+    function openEmailClient() {
+        const email = "jashvil26@gmail.com"; // Replace with your email address
+
+        const mailtoLink = `mailto:${email}`;
+        window.location.href = mailtoLink; // Open the user's email client
+    }
+</script>
+
+    
+    </div>
+    
+
+</body>
+
+
+
+</html>

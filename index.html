@@ -104,7 +104,22 @@
         <h2 class="ui header" id="projects" style="margin: 20px;">Projects</h2>
 
         <div class="ui stackable grid">
-
+            
+            <div class="four wide column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="panel.jpeg">
+                    </div>
+                    <div class="content">
+                        <center><div class="header">Adaptable Acoustic Panel</div></center>
+                    </div>
+                    <div class="ui bottom attached button primary learn-more" data-modal="modal-panel">
+                        <i class="folder open icon"></i>
+                        Learn More
+                    </div>
+                </div>
+            </div>
+            
             <div class="four wide column">
                 <div class="ui card">
                     <div class="image">
@@ -210,6 +225,49 @@
                 </div>
             </div>           
 
+        </div>
+
+        <div class="ui modal" id="modal-panel">
+            <i class="close icon"></i>
+            <div class="header">Adaptable Acoustic Panel</div>
+            <div class="scrolling content">
+                <div class="segment">
+                    <h1>The Problem: </h1>
+                    <p>Many venues suffer from poor sound quality due to inadequate acoustics, causing echoes and poor speech clarity that degrade the experience for audiences and performers. Fixing this often requires costly renovations and is especially difficult for venues that hold diverse performances with varying acoustic properties.</p>
+                    <h3>Skills Used: Python · Acoustics · Laser Cutting · Computer-Aided Design (CAD) · Manufacturing · Design</h3>
+                    <h1>Background Information: </h1>
+                    <p>Reverberation time (RT60) measures how long it takes for sound to decay. Many venues that have problems with echoes and unclear sound have reverberation times that are too high, so absorptive sound treatment is required. Absorptive sound treatment uses porous materials to dissipate and reduce sound energy. However, if a room is covered in absorbers, the sound becomes muted and does not reach the center of the room. Thus, diffusive sound treatment is needed. It uses specific reflective geometries to evenly distribute sound in a room. The diffusion coefficient (0 to 1) measures how much a panel diffuses sound.</p>
+                    <img class="ui centered large image" src="paneldiag1.jpeg">
+                    <h1>Design: </h1>
+                    <p>We designed a binary amplitude diffuser that has an absorber backing with a diffuser front on top of it, combining both absorption and diffusion. We utilized a 2-inch-thick fiberglass absorber backing (chosen due to its high absorption coefficient) with wooden diffuser slats in the front. This reduces RT60 with absorption and prevents “dead sound” with diffusion. The total prototype cost was $364, and it has a few key features. We created a wooden frame (2 ft x 4 ft) with 2" fiberglass insulation and 2'' air gap (air gaps help increase absorption without using extra material. Over this, plywood diffuser slats are mounted to two strips of fabric on the top and bottom. The slats wrap around 2 rollers on the sides of the panel, and a chain drive rotates the driven roller to switch between diffuser configurations. There is also a free-spinning roller that can adjust horizontally to tension the fabric. For the diffusers, since different performances have different frequencies of sound, the adaptability of this mechanism is essential to diffuse multiple different performances in large venues. The diffuser configurations we chose were 125-2000 Hz, which is meant for lower frequency performances like orchestra and percussion. The second configuration is for 250-4000 Hz, and is the general frequency range of the spoken word, as well as instruments such as piano, flute, etc. Diffuser designs were created using the 1 one-dimensional binary amplitude diffuser method, and our configurations ensure that the panel sizes were comparable to current options in the market today (if the frequency range is too large, the calculated diffuser size becomes too large to be practical).</p>
+                    <h2>Prototype of panel where red slats diffuse 125-2000 Hz and yellow diffuse 250-4000 Hz</h2>
+                    <img class="ui centered huge image" src="panel2.jpeg">
+                    <h2>Chain Wheel Subassembly: </h2>
+                    <img class="ui centered large image" src="panel3.jpeg">
+                    <h1>Absorption Testing: </h1>
+                    <p>RT60 was measured in a conference room using the interrupted noise method. Pink noise is played and paused from an omnidirectional speaker, and a calibrated sound level meter (SLM) records and calculates the RT60. Experimental data were compared to Eyring's theoretical model for reverberation with Python. Testing was performed with and without the panel to understand its true impact.</p>
+                    <h2>Diagram of Absorption Test Setup: </h2>
+                    <img class="ui centered large image" src="panel4.jpeg">
+                    <h1>Diffusion Testing: </h1>
+                    <p>Diffusion testing was conducted in an anechoic chamber (a special room designed to minimize sound reflections) using a directional speaker and rotating SLM. The speaker plays an impulse sound, and the SLM records the reflected sound in decibels. The sound was recorded at a fixed distance from the panel at different angles to truly gauge how evenly the sound is scattered. We tested with bare wood (pure reflection), absorber, and our binary amplitude diffuser (absorber and diffuser) in both diffuser configurations. Once results were achieved, an autocorrelation function was used to calculate the diffusion coefficient from the reflected sounds.</p>
+                    <h2>Diagram of Diffusion Test Setup: </h2>
+                    <img class="ui centered large image" src="panel5.jpeg">
+                    <h1>Challenges: </h1>
+                    <p>There were two main challenges with this project: testing and design. Firstly, the diffusion testing was very difficult as we had to try out many different test setups until we got it right. Since diffusion is a fairly new concept in the acoustics world, there is not that much published literature on proper testing methods, so we tried a few until we saw results that made sense. In addition, when manufactueign, the biggest issue was the wooden slats sagging off the rollers due to their weight. We tried many different solutions, but the one that worked best was putting a wooden rail on both sides of the panel for the fabric behind the wood to ride along, holding it up throughout rotation.</p>
+                    <h1>Results: </h1>
+                    <p>For absorption, RT60 is reduced by up to 60% in mid-range frequencies. In addition, the theoretical Eyring model matched experimental data within 8.4%. This shows that our panel reduces reverberation time, and our experimental data is validated by a proven theoretical model.</p>
+                    <h2>RT60 of Experimental Data and Eyring Model with and without Panel: </h2>
+                    <img class="ui centered huge image" src="panel6.jpeg">
+                    <p>For diffusion, the fronts significantly improve diffusion in their design frequency range compared to reflective wood. Each achieves a diffusion coefficient of approximately 0.7, which is comparable to other diffusers currently available for purchase (coefficient ranges from 0-1, with 1 being complete diffusion and 0 being pure reflection).</p>
+                    <h2>RT60 of Experimental Data and Eyring Model with and without Panel: </h2>
+                    <img class="ui centered huge image" src="panel7.jpeg">
+                    <p>For the adaptability mechanism, it works with minimal effort from the user and has a simple, reliable mechanism for minimal maintenance.</p>
+                    <h2>Video of Panel Rotating: </h2>
+                    <div class="video-container">
+                            <div class="ui embed" data-source="youtube" data-id="R3NtOEUwuQY"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="ui modal" id="modal-wordle">
